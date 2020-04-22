@@ -118,23 +118,29 @@ input {
   padding-top: 40px;
 }
 
+.textos {
+	color: #2c90c6; 
+	font-size: 40px; 
+	margin: 2% auto;
+	text-align: center;
+	font-family: 'Titan One';   
+	text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
+	padding-top: 40px;
+  }
+  
 
 
 
-
-
-
-
-.row {
+/*.row {
 	display:flex;
-	/*.col {
+	.col {
 	  flex:1;
 	  &:last-child {
 		margin-left: 1em;
 	  }
 	}
-  }*/
-}
+  }*
+}*/
 
 
 .card{
@@ -163,3 +169,4 @@ img.avatar {
   width: 6.23em;
   border-radius: 18em;
 }
+

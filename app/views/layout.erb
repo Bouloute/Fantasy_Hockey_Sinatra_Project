@@ -13,6 +13,7 @@
 
     <link href="https://fontawesome.com/icons/users?style=solid" rel="stylesheet">
     
+    <link rel="stylesheet" href="/stylesheets/split.css" />
     <link rel="stylesheet" href="/stylesheets/header.css" />
     <link rel="stylesheet" href="/stylesheets/styles.css" />
     <link rel="stylesheet" href="/stylesheets/player_styles.css" />
@@ -23,7 +24,7 @@
       <div id="header">
         <div class="gsify paginate">
           <h1 class="pull-left"> 
-            Fantasy Hockey
+            <a href="/">Fantasy Hockey</a>
             <span><br>
               <% if logged_in? %>
               <%= current_user.username %>
@@ -44,9 +45,7 @@
       </div>
         <%= yield %>
 
-      <footer class="branding">
-        <small>&copy; 2020 <strong>FantasyHockeySinatraProject</strong></small>
-      </footer>
+      
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

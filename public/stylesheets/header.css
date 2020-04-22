@@ -1,0 +1,60 @@
+/* apply a natural box layout model to all elements *
+*, div { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+*/
+/* prefixes */
+div { display: block; margin: 0; padding: 0; }
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+/* static wrappers */
+.gsify { 
+  width: 960px;
+  margin: 0 auto; 
+}
+.paginate {
+  padding: 0.75em 0 0;
+}
+.fixed-padding, .message {
+	padding: 2em; 
+}
+.add-space {
+ 	margin-top: 2em; 
+}
+.wrapper {
+  width: 100%;
+}
+
+/* header */
+
+#header {
+  /*text-shadow: -1px -1px rgba(0,0,0,0.3);*/
+	background: #222;
+  /*box-shadow: 0 1px 3px rgba(0,0,0,0.3);*/
+  border-bottom: 1px solid #000;
+  min-height: 75px;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px
+  /*position: relative;
+  z-index: 2000;*/
+}
+
+#header h1 {
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+#header h1 span {
+	font-size: 12px;
+  display:block;
+	color: #d9d9d9;
+  line-height: 1;
+}
+
+.login {
+	font-size: 0.75em;
+  border-bottom: 1px dashed rgba(0,0,0,0.3);
+}

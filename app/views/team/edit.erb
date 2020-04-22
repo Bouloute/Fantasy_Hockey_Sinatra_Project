@@ -1,0 +1,66 @@
+
+<div class="split team left">
+<p class="texto">My Players</p>
+
+    <% @team.players.all.each do |player| %>
+        <div class="user-profile">
+            <img class="avatar" src="<%= player.picture_path%>" alt="Ash" />
+                <div class="username"><%= player.name%></div>
+                <div class="bio"><%= player.role %></div>
+            <div class="description">I use to design websites and applications for the web.</div>
+            <ul class="data">
+                <li>
+                    <span class="entypo-heart"> <%= player.stats %></span>
+                </li>
+                <li>
+                    <span class="entypo-eye"> 853</span>
+                </li>
+                <li>
+                    <span class="entypo-user"> 311</span>
+                </li>
+                <li>
+                    <span class="entypo-user"> 311</span>
+                </li>
+            </ul>
+        </div>
+        <br><br><br>
+            
+    <% end %>
+
+</div>
+
+
+<div class="split team right">
+<p class="texto">Players Left to Pick</p>
+  
+    <% Player.all.each do |player| %>
+    <!--SHOULDNT SHOW PLAYERS THAT ARE IN THE TEAM ALREADY-->
+        <form method="post" action="/teams/<%= @team.id %>/edit">
+            <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <input id="hidden" type="hidden" name="player_id" value="<%=player.id%>">
+            <div class="user-profile">
+                <img class="avatar" src="<%= player.picture_path%>" alt="Ash" />
+                    <div class="username"><%= player.name%></div>
+                    <div class="bio"><%= player.role %></div>
+                <div class="description">I use to design websites and applications for the web.</div>
+                <ul class="data">
+                    <li>
+                        <span class="entypo-heart"> <%= player.stats %></span>
+                    </li>
+                    <li>
+                        <span class="entypo-eye"> 853</span>
+                    </li>
+                    <li>
+                        <span class="entypo-user"> 311</span>
+                    </li>
+                    <li>
+                        <span class="entypo-user"> 311</span>
+                    </li>
+                </ul>
+            </div>
+            <input type="submit" value="Pick this Player">
+        <br><br><br>
+        </form>
+        
+    <% end %>
+</div>

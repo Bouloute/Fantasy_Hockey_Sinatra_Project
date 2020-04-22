@@ -1,0 +1,26 @@
+<p class="texto">List of all Players</p>
+<% Player.all.each do |player|%>
+  <div class="user-profile">
+    <img class="avatar" src="<%= player.picture_path%>" alt="Ash" />
+      <div class="username"><%= player.name%></div>
+    <div class="bio">
+      <%= player.role %>
+    </div>
+      <div class="description">
+        I use to design websites and applications
+        for the web.
+    </div>
+    <ul class="data">
+      <li>
+        <span class="entypo-heart"> <%= player.stats %></span>
+      </li>
+      <li>
+        <span class="entypo-eye"> 853</span>
+      </li>
+      <li>
+        <span class="entypo-user"> 311</span>
+      </li>
+  </ul>
+  </div>
+  <br><br><br>
+<% end %>
