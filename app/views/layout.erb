@@ -7,16 +7,39 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
-    <title>FantasyHockeySinatraProject</title>
+    <title>Fantasy Hockey Sinatra Project</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="/stylesheets/header.css" />
     <link rel="stylesheet" href="/stylesheets/styles.css" />
     <link rel="stylesheet" href="/stylesheets/player_styles.css" />
   </head>
   <body>
     <div class="wrapper">
-
+    
+      <div id="header">
+        <div class="gsify paginate">
+          <h1 class="pull-left"> 
+            Fantasy Hockey
+            <span><br>
+              <% if logged_in? %>
+              <%= current_user.username %>
+              <% else %>
+              Please log in
+              <% end %>
+            </span>
+          </h1>
+          <div class="pull-right login">
+            <% if logged_in? %>
+            <a href="/logout">Log out</a>
+            <% else %>
+            <a href="/signin">Sign in</a><br><br>
+            <a href="/login">Log in</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
         <%= yield %>
 
       <footer class="branding">

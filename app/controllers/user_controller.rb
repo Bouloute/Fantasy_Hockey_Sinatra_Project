@@ -13,7 +13,27 @@ class UserController < ApplicationController
             User.create(username: params[:username], email: params[:email], password: params[:password])
             redirect to "/"
         end
-        
+
     end
 
+
+    get "/login" do 
+        erb :'/user/login'
+    end
+
+    post "/login" do
+        user = User.find_by(username: params[:username])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect to "/"
+        else
+            #error => unable to find you, please check your information and try again
+        end
+    end
+
+
+    get "/logout" do 
+        session.destroy
+        redirect to '/'
+    end
 end
