@@ -1,6 +1,6 @@
 
 <div class="split team left">
-<p class="texto">My Players</p>
+<p class="texto">My Team</p>
 
     <% @team.players.all.each do |player| %>
         <div class="user-profile">
@@ -8,19 +8,17 @@
                 <div class="username"><%= player.name%></div>
                 <div class="bio"><%= player.role %></div>
             <div class="description">I use to design websites and applications for the web.</div>
-            <ul class="data">
+            <ul class="data" style="background: #ac0404;">
                 <li>
-                    <span class="entypo-heart"> <%= player.stats %></span>
+                    <form method="POST" action="/teams/<%= @team.id %>/player_removal/<%= player.id %>"
+                    <input id="hidden" type="hidden" name="_method" value="DELETE">
+            
+                    <span class="entypo-trash"> 
+                        <input style="background-color: transparent; border: hidden; color: white;" type="Submit" value="Remove this player from my team"></input>
+                    </span>
+                    </form>
                 </li>
-                <li>
-                    <span class="entypo-eye"> 853</span>
-                </li>
-                <li>
-                    <span class="entypo-user"> 311</span>
-                </li>
-                <li>
-                    <span class="entypo-user"> 311</span>
-                </li>
+                
             </ul>
         </div>
         <br><br><br>
@@ -53,12 +51,13 @@
                     <li>
                         <span class="entypo-user"> 311</span>
                     </li>
-                    <li>
-                        <span class="entypo-user"> 311</span>
+                    <li style="background-color: green; bottom-right-radius:  0 0 .3em .3em;">
+                        <span class="entypo-user"> <input class="discreet_button" type="submit" value="Add"></span>
                     </li>
                 </ul>
+                
             </div>
-            <input type="submit" value="Pick this Player">
+            
         <br><br><br>
         </form>
         

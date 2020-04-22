@@ -56,10 +56,7 @@ class TeamController < ApplicationController
         end
     end
 
-    
-
     patch "/teams/:id/edit" do 
-       # binding.pry
         # check if name was edited
 
         #removes players
@@ -71,5 +68,17 @@ class TeamController < ApplicationController
         team.players.push(player)
 
         redirect to "/teams/#{params[:id]}/edit"
+    end
+
+    delete "/teams/:team_id/player_removal/:player_id" do 
+        binding.pry
+    end
+
+    post "/teams/:team_id/player_removal/:player_id" do 
+        player = Player.find_by(id: params[:player_id])
+        team = Team.find_by(id: params[:team_id])
+        team.players.delete(player)
+        redirect to "/teams/#{params[:team_id]}/edit"
+
     end
 end

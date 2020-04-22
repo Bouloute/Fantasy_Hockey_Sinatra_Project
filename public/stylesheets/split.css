@@ -4,23 +4,23 @@ body {
   }
 
 .split {
-	height: 100%;
+	height: 650px;
 	width: 50%;
 	position: fixed;
 	z-index: 1;
-	top: 200px;
+  top: 100px;
 	overflow-x: hidden;
 	padding-top: 20px;
   }
   
   .left {
+    overflow: scroll;
     overflow: visible;
 	left: 0;
   }
   
   .right {
-    overflow: visible;
-    overflow:scroll;
+    overflow: auto;
 	right: 0;
   }
   
@@ -43,9 +43,12 @@ body {
   
   .team.left {
     left: 0;
+    top: 100px;
+    overflow: auto;
     background-color: rgb(19, 30, 124);
   }
   
   .team.right {
-    left: 600px;
+    top: 100px;
+    right: 0;
     }

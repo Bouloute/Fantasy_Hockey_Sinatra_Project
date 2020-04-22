@@ -72,10 +72,11 @@ body {
 }
 .user-profile li {
 	margin: 0 auto;
-  padding: 1.30em; 
+  padding: 0.80em; 
   width: 33.33334%;
   display: table-cell;
   text-align: center;
+  
 }
 
 .user-profile span {
@@ -89,3 +90,8 @@ body {
   color: #daebea;
 }
 
+.discreet_button {
+
+  background-color: transparent;
+  border: hidden;
+}
