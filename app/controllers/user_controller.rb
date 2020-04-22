@@ -1,9 +1,7 @@
-
 class UserController < ApplicationController
 
-
     get "/signup" do
-        erb :signup
+        erb :'/user/signup'
     end
 
     post "/signup" do

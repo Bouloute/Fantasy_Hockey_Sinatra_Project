@@ -3,11 +3,12 @@ Author: @mrjopino
 Name: Design Register
 Description: Design register crazy!
 */
+
 @charset "utf-8";
 @import url(https://fonts.googleapis.com/css?family=Titan+One);
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
-
+/*
 body {
 	background: #1b1e24;
   background-image:-webkit-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
@@ -20,7 +21,7 @@ body {
 	font-size: 14px;
 	line-height: 1.5em;
 }
-
+*/
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
@@ -115,8 +116,4 @@ input {
   font-family: 'Titan One';   
   text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
   padding-top: 40px;
-}
-
-p:hover {
-  text-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
 }
