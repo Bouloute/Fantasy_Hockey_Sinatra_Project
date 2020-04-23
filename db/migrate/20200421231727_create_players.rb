@@ -3,6 +3,7 @@ class CreatePlayers < ActiveRecord::Migration
     create_table :players do |t|
       t.string :name
       t.string :role
+      t.string :team
       t.string :stats
       t.string :picture_path
     end

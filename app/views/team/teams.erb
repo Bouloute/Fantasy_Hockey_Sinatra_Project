@@ -11,20 +11,21 @@
 <% if @teams %>
     <div class="split right">
         <% @teams.all.each do |team|%>
-
+        <a href="/teams/<%=team.id%>" class="texto" style="color:white;">
             <div class="card">
                 <div class="top">
-                    <a href="/teams/<%=team.id%>" class="texto" style="color:white;"><%= team.name %></a>
-                </div>
+                    <%= team.name %>
+                </div></a>
                 <div class="bottom">
                     <ul>
                         <% team.players.all.each do |player|%>
-                            <li><%= player.name%>
+                            <li><p><%= player.name%></p>
                         <% end %>
                     </ul>
                 </div>
             </div>
-            <br><br><br>
+        
+        <br><br><br>
         <% end %>
     </div>
 

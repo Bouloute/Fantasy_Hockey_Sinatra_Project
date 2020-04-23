@@ -24,7 +24,13 @@ class TeamController < ApplicationController
         if params[:name] == ""
             flash[:error] = "Please fill in all the informations and try again"
             redirect to "/teams/new"
+
+        #name uniqness
+        elsif current_user.teams.find_by(name: params[:name])
+            flash[:error] = "You already have a team with this name"
+            redirect to "/teams/new"  
         else 
+            
             team = Team.create(name: params[:name])
             team.user = current_user
             team.save
@@ -79,9 +85,15 @@ class TeamController < ApplicationController
     
     patch "/teams/:id/edit/name" do 
         team = Team.find_by(id: params[:id])
-        team.update(params[:team])
-             
-        redirect to "/teams/#{params[:id]}/edit"    
+
+        #name uniqness
+        if current_user.teams.find_by(team.name)
+            flash[:error] = "You already have a team with this name"
+            redirect to "/teams/#{params[:id]}/edit"
+        else
+            team.update(params[:team])
+            redirect to "/teams/#{params[:id]}/edit" 
+        end   
     end
 
     

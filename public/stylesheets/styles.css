@@ -141,6 +141,7 @@ input {
 
 .card{
 	margin: auto;
+	margin-top: 50px;
 	width: 275px;
 	height: 300px;
 	border-radius: 25px;

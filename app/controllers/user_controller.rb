@@ -18,6 +18,12 @@ class UserController < ApplicationController
             redirect to "/"
         end
 
+        if User.find_by(username: params[:username])
+            flash[:error] = "This username is already used. Please choose a different username"
+            
+            redirect to "/"
+        end
+
         #should never happen due to html
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
             flash[:error] = "Please fill in all the informations and try again"

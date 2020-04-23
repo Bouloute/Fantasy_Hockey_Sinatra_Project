@@ -1,23 +1,24 @@
 <div class="split team left">
-<p class="texto"><%= @team.name %></p>
+    <p class="texto"><%= @team.name %></p>
 
-<div style="margin: auto;">
-    <span class="entypo-pencil">
-        <form method="POST" action="/teams/<%= @team.id %>/edit/name">
-            <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <div style="margin: auto;">
+        <span class="entypo-pencil">
+            <form method="POST" action="/teams/<%= @team.id %>/edit/name">
+                <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-            <input type="text" name="team[name]"></input>
-            <input class="discreet_button" type="Submit" value="Change Name"></input>
-        </form>
-    </span>
-</div><br>
+                <input type="text" name="team[name]"></input>
+                <input class="discreet_button" type="Submit" value="Change Name"></input>
+            </form>
+        </span>
+    </div>
+    <br>
 
     <% @team.players.all.each do |player| %>
         <div class="user-profile">
             <img class="avatar" src="<%= player.picture_path%>" alt="Ash" />
-                <div class="username"><%= player.name%></div>
-                <div class="bio"><%= player.role %></div>
-            <div class="description">I use to design websites and applications for the web.</div>
+            <div class="username"><%= player.name%></div>
+            <div class="bio"><%= player.role %></div>
+            <div class="description"><%= player.team %></div>
             <ul class="data" style="background: #ac0404;">
                 <li>
                     <form method="POST" action="/teams/<%= @team.id %>/player_removal/<%= player.id %>">
@@ -41,7 +42,9 @@
 <div class="split team right">
 <p class="texto">Players Left to Pick</p>
   
-    <% Player.all.each do |player| %>
+    <% players_left = Player.all.select do |player| !@team.players.include?(player) end %>
+
+    <% players_left.each do |player| %>
     <!--SHOULDNT SHOW PLAYERS THAT ARE IN THE TEAM ALREADY-->
         <form method="post" action="/teams/<%= @team.id %>/edit">
             <input id="hidden" type="hidden" name="_method" value="PATCH">
@@ -50,7 +53,7 @@
                 <img class="avatar" src="<%= player.picture_path%>" alt="Ash" />
                     <div class="username"><%= player.name%></div>
                     <div class="bio"><%= player.role %></div>
-                <div class="description">I use to design websites and applications for the web.</div>
+                <div class="description"><%= player.team %></div>
                 <ul class="data">
                     <% player.stats.split(',').each do |stat| %>
                         <li>

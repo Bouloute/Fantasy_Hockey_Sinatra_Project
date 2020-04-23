@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20200422183225) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "role"
+    t.string "team"
     t.string "stats"
     t.string "picture_path"
   end
