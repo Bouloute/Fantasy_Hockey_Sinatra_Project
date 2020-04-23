@@ -2,8 +2,8 @@ class UserController < ApplicationController
 
     get "/signup" do
         if logged_in?
-            #error =>you are already logged in.
-            redirect to "/"
+            flash[:error] = "Please log out if you wish to Sign up"
+            redirect to "/" 
         else
             erb :'/user/signup'
         end
@@ -11,8 +11,16 @@ class UserController < ApplicationController
 
     post "/signup" do
 
+        #verifies uniqness of email
+        if User.find_by(email: params[:email])
+            flash[:error] = "This email is already registered"
+            
+            redirect to "/"
+        end
+
+        #should never happen due to html
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
-            #error => please fill in all the forms and try again
+            flash[:error] = "Please fill in all the informations and try again"
             redirect to "/"
         else 
             user = User.create(username: params[:username], email: params[:email], password: params[:password])
@@ -25,7 +33,7 @@ class UserController < ApplicationController
 
     get "/login" do 
         if logged_in?
-            #error =>you are already logged in.
+            flash[:error] = "You are already logged in"
             redirect "/"
         else
             erb :'/user/login'
@@ -38,7 +46,7 @@ class UserController < ApplicationController
             session[:user_id] = user.id
             redirect to "/"
         else
-            #error => unable to find you, please check your information and try again
+            flash[:error] = "Unable to find you, please check your information and try again"
             redirect to "/login"
         end
     end
@@ -49,7 +57,7 @@ class UserController < ApplicationController
             session.destroy
             redirect to '/'
         else
-            #error =>you are already logged out.
+            flash[:error] = "You are already logged out"
             redirect to "/"
         end
     end

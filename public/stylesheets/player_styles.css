@@ -79,6 +79,7 @@ body {
   
 }
 
+
 .user-profile span {
 	font-family: "varela round", sans-serif;
 	color: #e3eeee;
@@ -91,7 +92,14 @@ body {
 }
 
 .discreet_button {
-
   background-color: transparent;
   border: hidden;
+
+  color: white;
+  margin: 2% auto;
+  text-align: center;
+  font-family: 'Titan One';   
+  text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
+
+
 }

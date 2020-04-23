@@ -70,6 +70,21 @@ input {
 	width: 204px;
 }
 
+.Registro input[type="email"] {
+	background-color: #fff;
+	border-top: 2px solid #2c90c6;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+	color: #363636;
+	padding-left: 36px;
+	width: 204px;
+}
+
 .Registro input[type="password"] {
 	background-color: #fff;
 	border-top: 2px solid #2c90c6;
@@ -118,37 +133,20 @@ input {
   padding-top: 40px;
 }
 
-.textos {
-	color: #2c90c6; 
-	font-size: 40px; 
-	margin: 2% auto;
-	text-align: center;
-	font-family: 'Titan One';   
-	text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
-	padding-top: 40px;
-  }
-  
 
 
 
-/*.row {
-	display:flex;
-	.col {
-	  flex:1;
-	  &:last-child {
-		margin-left: 1em;
-	  }
-	}
-  }*
-}*/
+
 
 
 .card{
-	/*margin: 50px auto;*/
+	margin: auto;
 	width: 275px;
 	height: 300px;
 	border-radius: 25px;
 	background-color: #2c90c6;
+	right: 33%;
+	text-align: center;
 }
 
 .card div.top{	
@@ -170,3 +168,46 @@ img.avatar {
   border-radius: 18em;
 }
 
+.button {
+	background: #76B3FA;
+	border-radius: 25px;
+	padding: 20px 60px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.45em;
+	font-family: 'Titan One'; 
+	margin: auto;
+
+  }
+
+  input.button{
+	background: rgb(165, 2, 2);
+	border-radius: 25px;
+	padding: 20px 60px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.45em;
+	font-family: 'Titan One'; 
+	margin: auto;
+
+  }
+
+  .navbar{
+	background: rgb(131, 131, 131);
+	border-radius: 25px;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.45em;
+	font-family: 'Titan One'; 
+	margin: auto;
+  }
+
+  .alert {
+	padding: 20px;
+	background-color: #f44336; /* Red */
+	color: white;
+	margin-bottom: 15px;
+	border-radius: 10px;
+  }

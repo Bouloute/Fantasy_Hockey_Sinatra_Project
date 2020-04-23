@@ -11,16 +11,12 @@
         for the web.
     </div>
     <ul class="data">
-      <li>
-        <span class="entypo-heart"> <%= player.stats %></span>
-      </li>
-      <li>
-        <span class="entypo-eye"> 853</span>
-      </li>
-      <li>
-        <span class="entypo-user"> 311</span>
-      </li>
-  </ul>
+      <% player.stats.split(',').each do |stat| %>
+        <li>
+          <span> <%= stat %></span>
+        </li>
+      <% end %>
+    </ul>
   </div>
   <br><br><br>
 <% end %>

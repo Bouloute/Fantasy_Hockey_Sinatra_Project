@@ -1,34 +1,31 @@
 <p class="texto">List of all your Teams</p>
 
 <div class="split left">
-    <div class="centered">
+    <a href="/teams/new">
         <div class="card">	
-            <div class="top">
-                <p class="texto" style="color:white;">Create a Team</p>
-            </div>
-            <div class="bottom">
-                <a href="/teams/new">Click here (wip an icon of a +?)</a>
-            </div>
+            <p class="texto" style="color:white;">Create a Team</p>
         </div>
-    </div>
+    </a>
 </div>
 
-<% if @teams%>
+<% if @teams %>
     <div class="split right">
-        <div class="centered">
-            <% @teams.all.each do |team|%>
+        <% @teams.all.each do |team|%>
 
-                <div class="card">
-                    <div class="top">
-                        <a href="/teams/<%=team.id%>"><%= team.name %></a>
-                    </div>
-                    <div class="bottom">
-                        WIP should show players names
-                    </div>
+            <div class="card">
+                <div class="top">
+                    <a href="/teams/<%=team.id%>" class="texto" style="color:white;"><%= team.name %></a>
                 </div>
-                <br><br><br>
-            <% end %>
-        </div>
+                <div class="bottom">
+                    <ul>
+                        <% team.players.all.each do |player|%>
+                            <li><%= player.name%>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+            <br><br><br>
+        <% end %>
     </div>
 
 <% end %>

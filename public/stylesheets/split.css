@@ -14,31 +14,17 @@ body {
   }
   
   .left {
-    overflow: scroll;
-    overflow: visible;
-	left: 0;
+    left: 0;
+    height: 550px;
+    top: 200px;
+    overflow: auto;
   }
   
   .right {
-    overflow: auto;
-	right: 0;
+    right: 0;
+    height: 550px;
+    top: 200px;
   }
-  
-  .centered {
-	position: absolute;
-	/*top: 400px;*/
-	right: 33%;
-	transform: translate(-50%);
-	text-align: center;
-  }
-  
-  .centered img {
-	width: 150px;
-	border-radius: 50%;
-  }
-
-
-
 
   
   .team.left {
