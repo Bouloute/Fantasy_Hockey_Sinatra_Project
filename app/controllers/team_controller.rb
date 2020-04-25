@@ -87,7 +87,8 @@ class TeamController < ApplicationController
         team = Team.find_by(id: params[:id])
 
         #name uniqness
-        if current_user.teams.find_by(team.name)
+        if current_user.teams.find_by(name: params[:team][:name])
+
             flash[:error] = "You already have a team with this name"
             redirect to "/teams/#{params[:id]}/edit"
         else
